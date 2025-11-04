@@ -18,15 +18,15 @@ class ParametreFragment : DialogFragment() {
 
         val view = inflater.inflate(R.layout.fragment_parametre, container, false)
 
-        val button = view.findViewById<Button>(R.id.button)
+//        val button = view.findViewById<Button>(R.id.button)
 
 
 
 
 
-        button.setOnClickListener {
-
-        }
+//        button.setOnClickListener {
+//
+//        }
 
 
 
@@ -38,6 +38,15 @@ class ParametreFragment : DialogFragment() {
         return view
     }
 
+    override fun onStart() {
+        super.onStart()
+        dialog?.window?.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.MATCH_PARENT
+            )
+        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent
+        )
 
+    }
 
 }
