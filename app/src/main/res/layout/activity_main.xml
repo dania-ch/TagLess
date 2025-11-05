@@ -5,67 +5,105 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/acceuilbg">
 
     <TextView
         android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="Trouver votre article"
+        android:text="Scannez. Comparez. Économisez"
+        android:fontFamily="@font/montserratregular"
+        android:textColor="@color/white"
+        android:textSize="20dp"
         android:gravity="center"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
+        android:layout_below="@id/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:shadowColor="@color/turquoise"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <ImageButton
+        android:id="@+id/buttonParametre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_parametre"
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:layout_alignParentRight="true"
-        tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="16dp" />
+        />
 
-    <Button
-        android:id="@+id/button3"
+
+
+    <ImageButton
+        android:id="@+id/buttonProfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Button"
         tools:layout_editor_absoluteX="160dp"
-        tools:layout_editor_absoluteY="493dp" />
+        tools:layout_editor_absoluteY="493dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_account"/>
 
-    <Button
-        android:id="@+id/button4"
+    <ImageButton
+        android:id="@+id/buttonFav"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_alignParentRight="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_favorite_full"/>
+
+    <Button
+        android:id="@+id/buttonScanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scanner"
         android:layout_marginTop="10dp"
         android:layout_below="@id/text1"
+        android:textColor="@color/black"
+        android:fontFamily="@font/montserratbold"
+        android:backgroundTint="@color/white"
         android:layout_centerHorizontal="true"
         tools:layout_editor_absoluteX="160dp"
         tools:layout_editor_absoluteY="398dp" />
 
+
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttonChercher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button4"
+        android:layout_below="@id/buttonScanner"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/montserratbold"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:text="Chercher"
+        tools:layout_editor_absoluteX="305dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_below="@id/buttonFav"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
 
-        android:text="Button"
-        tools:layout_editor_absoluteX="305dp"
-        tools:layout_editor_absoluteY="16dp" />
+
+
+
+        />
 
 </RelativeLayout>
