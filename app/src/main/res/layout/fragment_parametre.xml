@@ -7,10 +7,74 @@
     tools:context=".ParametreFragment"
     >
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageButton
+        android:id="@+id/buttonParametre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_parametre"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="15dp"
+
+        />
+    <ImageButton
+        android:id="@+id/buttonProfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="493dp"
+        android:layout_marginRight="75dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_account"/>
+
+    <ImageButton
+        android:id="@+id/buttonFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_favorite_full"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/TitrePar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserratbold"
+        android:layout_marginTop="140dp"
+        android:layout_centerHorizontal="true"
+        android:text="Parametres"
+        android:textSize="20dp"/>
+
+    <TextView
+        android:id="@+id/LangueText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Langue"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="17dp"/>
+
+    <Spinner
+        android:id="@+id/spinnerLangue"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:spinnerMode="dropdown"
+        android:entries="@array/langues"
+        android:padding="8dp"
+        android:backgroundTint="@color/turquoise"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="214dp"
+        android:textSize="17dp"
+        />
 
 </RelativeLayout>
