@@ -4,4 +4,6 @@
         <item>Français</item>
         <item>Anglais</item>
     </string-array>
+    <string name="scanner">Scanner</string>
+    <string name="chercher">Chercher</string>
 </resources>

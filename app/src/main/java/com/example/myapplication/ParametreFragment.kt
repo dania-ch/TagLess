@@ -121,6 +121,9 @@ class ParametreFragment : DialogFragment() {
         resources.updateConfiguration(configuration, resources.displayMetrics)
 
         dismissAllowingStateLoss()
+        saveLanguage(languageCode)
+
+
 
         // Redémarrer proprement l'activité
         val intent = requireActivity().intent
