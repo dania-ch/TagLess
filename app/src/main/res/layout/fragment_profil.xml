@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    tools:context=".ProfilFragment">
+
+
+    <TextView
+        android:id="@+id/bienvenue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bienvenue"
+        android:textSize="20dp"
+        android:fontFamily="@font/montserratbold"
+        android:layout_marginTop="170dp"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="@color/turquoise"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        />
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttoncnx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/bleunuit"
+        android:fontFamily="@font/montserratbold"
+        android:text="@string/cnx"
+        android:layout_marginTop="300dp"/>
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:id="@+id/buttonInscription"
+        android:layout_width="wrap_content"
+        android:backgroundTint="@color/bleunuit"
+        android:fontFamily="@font/montserratbold"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttoncnx"
+        android:text="@string/inscription"
+        android:layout_marginTop="30dp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/logo"
+        />
+
+    <ImageButton
+        android:id="@+id/buttonParametre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_parametre"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="15dp"
+
+        />
+    <ImageButton
+        android:id="@+id/buttonProfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="493dp"
+        android:layout_marginRight="75dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_account"/>
+
+    <ImageButton
+        android:id="@+id/buttonFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_favorite_full"/>
+
+</RelativeLayout>

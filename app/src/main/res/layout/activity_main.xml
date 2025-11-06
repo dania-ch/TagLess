@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="Scannez, Comparez, Économisez"
+        android:text="@string/text1"
         android:fontFamily="@font/montserratregular"
         android:textColor="@color/white"
         android:textSize="20dp"

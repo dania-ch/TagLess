@@ -1,56 +1,3 @@
-//package com.example.myapplication
-//
-//import android.os.Bundle
-//import android.view.LayoutInflater
-//import android.view.View
-//import android.view.ViewGroup
-//import android.widget.Button
-//import androidx.fragment.app.DialogFragment
-//
-//class ParametreFragment : DialogFragment() {
-//
-//
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//
-//        val view = inflater.inflate(R.layout.fragment_parametre, container, false)
-//
-////        val button = view.findViewById<Button>(R.id.button)
-//
-//
-//
-//
-//
-////        button.setOnClickListener {
-////
-////        }
-//
-//
-//
-//
-//
-//
-//
-//
-//        return view
-//    }
-//
-//    override fun onStart() {
-//        super.onStart()
-//        dialog?.window?.setLayout(
-//            ViewGroup.LayoutParams.MATCH_PARENT,
-//            ViewGroup.LayoutParams.MATCH_PARENT
-//            )
-//        dialog?.window?.setBackgroundDrawableResource(android.R.color.transparent
-//        )
-//
-//    }
-//
-//}
-
 package com.example.myapplication
 
 import android.content.Context
@@ -65,6 +12,10 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import java.util.*
+import android.widget.Button
+import android.app.AlertDialog
+import android.widget.ImageButton
+
 
 class ParametreFragment : DialogFragment() {
 
@@ -101,6 +52,45 @@ class ParametreFragment : DialogFragment() {
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
+
+        val btnContact = view.findViewById<Button>(R.id.btnContact)
+        val btnAbout = view.findViewById<Button>(R.id.btnAbout)
+
+// Contact Support popup
+        btnContact.setOnClickListener {
+            val dialog = AlertDialog.Builder(requireContext())
+                .setTitle("Contact Support")
+                .setMessage("Vous pouvez nous contacter à : support@monsite.com\nNous répondrons rapidement !")
+                .setPositiveButton("OK", null)
+                .create()
+            dialog.show()
+        }
+
+// À propos popup
+        btnAbout.setOnClickListener {
+            val dialog = AlertDialog.Builder(requireContext())
+                .setTitle("@string/apropos")
+                .setMessage("@string/mssgapropos")
+                .setPositiveButton("OK", null)
+                .create()
+            dialog.show()
+        }
+
+
+
+        val btnProfil = view.findViewById<ImageButton>(R.id.buttonProfil)
+
+        btnProfil.setOnClickListener {
+            // Ferme le fragment Paramètre (facultatif si tu veux qu’il disparaisse)
+            dismiss()
+
+            // Ouvre le fragment Profil comme une boîte de dialogue
+            val profilFragment = ProfilFragment()
+            profilFragment.show(parentFragmentManager, "ProfilFragment")
+        }
+
+
+
 
         return view
     }

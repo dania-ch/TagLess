@@ -6,4 +6,19 @@
     </string-array>
     <string name="scanner">Scanner</string>
     <string name="chercher">Chercher</string>
+    <string name="text1">Scannez, Comparez, Économisez</string>
+    <string name="parametre">Paramètres</string>
+    <string name="langue">Langue</string>
+    <string name="apropos">À propos</string>
+    <string name="mssgapropos">Mon Application v1.0
+Développée par Dania</string>
+    <string name="bienvenue">Bienvenue sur TagLess</string>
+    <string name="cnx">Se connecter</string>
+    <string name="inscription">Créer un compte</string>
+    <string name="email">E-mail</string>
+    <string name="motdepasse">Mot de passe</string>
+    <string name="creeruncompte">Créer un compte</string>
+    <string name="nomcomplet">Nom complet</string>
+
+
 </resources>

@@ -9,5 +9,18 @@
     </string-array>
     <string name="scanner">Scan</string>
     <string name="chercher">Search</string>
+    <string name="text1">Scan, Compare, Save</string>
+    <string name="parametre">Settings</string>
+    <string name="langue">Language</string>
+    <string name="apropos">About us</string>
+    <string name="mssgapropos">My Application v1.0
+Developed by Dania</string>
+    <string name="bienvenue">Welcome to TagLess</string>
+    <string name="cnx">Log in</string>
+<string name="inscription">Create an account</string>
+    <string name="email">Mail</string>
+    <string name="motdepasse">Password</string>
+    <string name="creeruncompte">Create an account</string>
+    <string name="nomcomplet">Full name</string>
 
 </resources>

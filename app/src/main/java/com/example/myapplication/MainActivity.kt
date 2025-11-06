@@ -29,6 +29,10 @@ class MainActivity : AppCompatActivity() {
         binding.buttonParametre.setOnClickListener {
             ParametreFragment().show(supportFragmentManager, "ParametreFragment")
         }
+
+        binding.buttonProfil.setOnClickListener {
+            ProfilFragment().show(supportFragmentManager, "ProfilFragment")
+        }
     }
 
     fun setLocale(context: Context, languageCode: String){
@@ -40,6 +44,8 @@ class MainActivity : AppCompatActivity() {
 
         context.resources.updateConfiguration(config, context.resources.displayMetrics)
     }
+
+
 
 }
 
