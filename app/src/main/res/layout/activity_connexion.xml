@@ -114,16 +114,17 @@
         android:layout_width="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
-        android:text="Se connecter"
+        android:text="@string/cnx"
         android:layout_marginTop="380dp"
         android:backgroundTint="@color/bleunuit"
         android:fontFamily="@font/montserratbold"/>
 
     <TextView
         android:id="@+id/tvInscriptionLink"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pas encore de compte ? Inscrivez-vous"
+        android:text="@string/pascompteinscr"
         android:textColor="@color/black"
         android:fontFamily="@font/montserratbold"
         android:layout_marginTop="480dp"

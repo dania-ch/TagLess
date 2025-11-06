@@ -22,5 +22,6 @@ Developed by Dania</string>
     <string name="motdepasse">Password</string>
     <string name="creeruncompte">Create an account</string>
     <string name="nomcomplet">Full name</string>
+    <string name="pascompteinscr">Dont have an account yet? Sign up</string>
 
 </resources>

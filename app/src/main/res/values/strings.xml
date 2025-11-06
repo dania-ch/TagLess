@@ -19,6 +19,7 @@ Développée par Dania</string>
     <string name="motdepasse">Mot de passe</string>
     <string name="creeruncompte">Créer un compte</string>
     <string name="nomcomplet">Nom complet</string>
+    <string name="pascompteinscr">Pas encore de compte ? Inscrivez-vous</string>
 
 
 </resources>
