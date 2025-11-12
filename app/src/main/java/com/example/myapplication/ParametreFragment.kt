@@ -59,22 +59,24 @@ class ParametreFragment : DialogFragment() {
 // Contact Support popup
         btnContact.setOnClickListener {
             val dialog = AlertDialog.Builder(requireContext())
-                .setTitle("Contact Support")
-                .setMessage("Vous pouvez nous contacter à : support@monsite.com\nNous répondrons rapidement !")
+                .setTitle(getString(R.string.contact_support))
+                .setMessage(getString(R.string.msg_contact_support))
                 .setPositiveButton("OK", null)
                 .create()
             dialog.show()
         }
 
+
 // À propos popup
         btnAbout.setOnClickListener {
             val dialog = AlertDialog.Builder(requireContext())
-                .setTitle("@string/apropos")
-                .setMessage("@string/mssgapropos")
+                .setTitle(getString(R.string.apropos))
+                .setMessage(getString(R.string.mssgapropos))
                 .setPositiveButton("OK", null)
                 .create()
             dialog.show()
         }
+
 
 
 
@@ -89,7 +91,11 @@ class ParametreFragment : DialogFragment() {
             profilFragment.show(parentFragmentManager, "ProfilFragment")
         }
 
-
+        val btnFav = view.findViewById<ImageButton>(R.id.buttonFav)
+        btnFav.setOnClickListener {
+            dismiss()
+            FavFragment().show(parentFragmentManager, "FavFragment")
+        }
 
 
         return view

@@ -13,8 +13,7 @@
     <string name="parametre">Settings</string>
     <string name="langue">Language</string>
     <string name="apropos">About us</string>
-    <string name="mssgapropos">My Application v1.0
-Developed by Dania</string>
+    <string name="mssgapropos">My Application v1.0 \n Developed by Dania</string>
     <string name="bienvenue">Welcome to TagLess</string>
     <string name="cnx">Log in</string>
 <string name="inscription">Create an account</string>
@@ -23,5 +22,9 @@ Developed by Dania</string>
     <string name="creeruncompte">Create an account</string>
     <string name="nomcomplet">Full name</string>
     <string name="pascompteinscr">Dont have an account yet? Sign up</string>
+    <string name="contact_support">Contact Support</string>
+    <string name="msg_contact_support">You can contact us at: support@monsite.com\nWe will reply quickly!</string>
+    <string name="meslistes">My lists</string>
+
 
 </resources>

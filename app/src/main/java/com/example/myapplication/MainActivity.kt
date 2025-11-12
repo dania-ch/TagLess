@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -23,7 +24,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        binding.buttonScanner.setOnClickListener {
+            val intent = Intent(this, ScanActivity::class.java)
+            startActivity(intent)
+        }
 
 //
         binding.buttonParametre.setOnClickListener {
@@ -32,6 +36,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonProfil.setOnClickListener {
             ProfilFragment().show(supportFragmentManager, "ProfilFragment")
+        }
+
+        binding.buttonFav.setOnClickListener {
+            FavFragment().show(supportFragmentManager, "FavFragment")
         }
     }
 

@@ -1,3 +1,5 @@
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -47,7 +49,27 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.camera.view)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // CameraX
+    implementation(libs.androidx.camera.core)
+// adapte la version
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.view.v123)
+// fournit PreviewView
+// ML Kit - Barcode Scanning
+    implementation(libs.barcode.scanning)
+// adapte la version
+// Kotlin coroutines (optionnel, si tu veux)
+    implementation(libs.kotlinx.coroutines.android)
+
+
+    implementation(libs.barcode.scanning)
+
 }

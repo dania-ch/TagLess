@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    android:layout_height="match_parent"
+    >
+
+
+    <ImageButton
+        android:id="@+id/buttonParametre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentEnd="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_parametre"
+        android:layout_marginRight="150dp"
+        android:layout_marginTop="15dp"
+
+        />
+
+    <ImageButton
+        android:id="@+id/buttonProfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentEnd="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="493dp"
+        android:layout_marginRight="75dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_account"/>
+
+    <ImageButton
+        android:id="@+id/buttonFav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/icon_favorite_full"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:srcCompat="@drawable/logo"
+        />
+
+    <TextView
+        android:id="@+id/meslistes"
+        android:fontFamily="@font/montserratbold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:shadowColor="@color/turquoise"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="4"
+        android:text="@string/meslistes"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="40dp"/>
+
+    <ImageButton
+        android:id="@+id/buttonadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_add"
+        android:layout_marginLeft="350dp"
+        android:layout_marginTop="130dp"
+
+        />
+
+
+
+</RelativeLayout>

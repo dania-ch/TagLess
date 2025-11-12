@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:gravity="center_vertical"
+    android:backgroundTint="@color/gris">
+
+    <ImageButton
+        android:id="@+id/buttonsupp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label"
+        android:layout_alignRight="@+id/label"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="-67dp"
+        android:layout_marginRight="-184dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/ic_supp" />
+
+    <ImageView
+        android:id="@+id/iconarrow"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_arrow"
+        android:layout_marginRight="120dp"
+        android:layout_marginTop="95dp"/>
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="95dp"
+        android:layout_weight="1"
+        android:text="Nom liste"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
