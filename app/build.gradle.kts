@@ -72,4 +72,7 @@ dependencies {
 
     implementation(libs.barcode.scanning)
 
+    implementation ("com.github.bumptech.glide:glide:5.0.5")
+
+
 }

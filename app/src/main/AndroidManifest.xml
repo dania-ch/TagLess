@@ -2,12 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.myapplication">
-
     <!-- ✅ Permission pour utiliser la caméra -->
-    <uses-permission android:name="android.permission.CAMERA" />
-
-
-    <!-- ✅ Indique que ton appli utilise une caméra -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- ✅ Indique que ton appli utilise une caméra -->
     <uses-feature
         android:name="android.hardware.camera.any"
         android:required="true" />
@@ -22,33 +18,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ChercherActivity"
+            android:exported="false" />
         <!-- ✅ Activité pour scanner les codes-barres -->
         <activity
             android:name=".ScanActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.MyApplication" />
-
-        <!-- Tes autres activités existantes -->
+            android:theme="@style/Theme.MyApplication" /> <!-- Tes autres activités existantes -->
         <activity
             android:name=".InscriptionActivity"
             android:exported="false" />
-
         <activity
             android:name=".ConnexionActivity"
-            android:exported="false" />
-
-        <!-- Activité principale (point d’entrée) -->
+            android:exported="false" /> <!-- Activité principale (point d’entrée) -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>
