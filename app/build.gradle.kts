@@ -65,8 +65,7 @@ dependencies {
 // fournit PreviewView
 // ML Kit - Barcode Scanning
     implementation(libs.barcode.scanning)
-// adapte la version
-// Kotlin coroutines (optionnel, si tu veux)
+
     implementation(libs.kotlinx.coroutines.android)
 
 
@@ -74,8 +73,38 @@ dependencies {
 
     implementation ("com.github.bumptech.glide:glide:5.0.5")
 
+    implementation(libs.osmdroid.android)
 
+    implementation("org.maplibre.gl:android-sdk:12.1.3")
+// Version stable MapLibre SDK
 
 
 
 }
+//
+//dependencies {
+//    // Core Android
+//    implementation (libs.androidx.core.ktx.v1170)
+//    implementation (libs.androidx.appcompat)
+//    implementation (libs.material)
+//    implementation (libs.androidx.constraintlayout)
+//
+//    // CameraX
+//    implementation (libs.androidx.camera.core)
+//    implementation (libs.androidx.camera.camera2)
+//    implementation (libs.androidx.camera.lifecycle)
+//    implementation (libs.androidx.camera.view.v123)
+//
+//    // ML Kit Barcode
+//    implementation (libs.barcode.scanning)
+//
+//    // Kotlin Coroutines
+//    implementation (libs.kotlinx.coroutines.android)
+//
+//    // Glide
+//    implementation (libs.glide)
+//    annotationProcessor (libs.compiler)
+//
+//    // MapLibre (OpenStreetMap)
+//    implementation (libs.android.sdk)
+//}
