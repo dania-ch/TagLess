@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+
+
+
+
+
         val languageCode = getSharedPreferences("Settings", Context.MODE_PRIVATE).getString("app_lang", "fr")
         setLocale(this, languageCode!!)
 
@@ -26,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonScanner.setOnClickListener {
             val intent = Intent(this, ScanActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.buttonChercher.setOnClickListener {
+            val intent = Intent(this, ChercherActivity::class.java)
             startActivity(intent)
         }
 
