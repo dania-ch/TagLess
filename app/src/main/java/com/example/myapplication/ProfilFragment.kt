@@ -200,6 +200,29 @@ class ProfilFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        // Récupération des boutons
+        val btnProfil = view?.findViewById<ImageButton>(R.id.buttonProfil)
+        val btnParametre = view?.findViewById<ImageButton>(R.id.buttonParametre)
+
+        // 🟢 Ouvrir le fragment Profil
+        btnProfil?.setOnClickListener {
+            dismiss() // fermer Favoris
+            ProfilFragment().show(parentFragmentManager, "ProfilFragment")
+        }
+
+        // 🟢 Ouvrir le fragment Paramètres
+        btnParametre?.setOnClickListener {
+            dismiss()
+            ParametreFragment().show(parentFragmentManager, "ParametreFragment")
+        }
+
+        val btnFav = view?.findViewById<ImageButton>(R.id.buttonFav)
+        btnFav?.setOnClickListener {
+            dismiss()
+            FavFragment().show(parentFragmentManager, "FavFragment")
+        }
+
         val view = inflater.inflate(R.layout.fragment_profil, container, false)
 
         auth = FirebaseAuth.getInstance()
@@ -213,7 +236,7 @@ class ProfilFragment : DialogFragment() {
         val btnDeconnexion = view.findViewById<Button>(R.id.buttonDeconnexion)
         val btnSupprimer = view.findViewById<Button>(R.id.buttonSupprimer)
         val tvNom = view.findViewById<TextView>(R.id.tvNom)
-        val tvEmail = view.findViewById<TextView>(R.id.tvEmail)
+
 
         // 🔹 Si utilisateur connecté
         if (currentUser != null) {
@@ -225,13 +248,12 @@ class ProfilFragment : DialogFragment() {
             btnDeconnexion.visibility = View.VISIBLE
             btnSupprimer.visibility = View.VISIBLE
             tvNom.visibility = View.VISIBLE
-            tvEmail.visibility = View.VISIBLE
 
             db.collection("users").document(currentUser.uid).get()
                 .addOnSuccessListener { doc ->
                     if (doc.exists()) {
-                        tvNom.text = doc.getString("nom")
-                        tvEmail.text = currentUser.email
+                        tvNom.text = doc.getString("name")
+
                     }
                 }
 
@@ -279,7 +301,7 @@ class ProfilFragment : DialogFragment() {
             btnDeconnexion.visibility = View.GONE
             btnSupprimer.visibility = View.GONE
             tvNom.visibility = View.GONE
-            tvEmail.visibility = View.GONE
+
 
             // Se connecter → ConnexionActivity
             btnCnx.setOnClickListener {
@@ -334,7 +356,7 @@ class ProfilFragment : DialogFragment() {
 
             // Mettre à jour le nom dans Firestore
             db.collection("users").document(currentUser.uid)
-                .update("nom", newNom)
+                .update("name", newNom)
                 .addOnSuccessListener {
                     Toast.makeText(requireContext(), "Nom mis à jour", Toast.LENGTH_SHORT).show()
                 }
