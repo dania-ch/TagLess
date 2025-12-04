@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "640405482218",
+    "project_id": "tagless-66b73",
+    "storage_bucket": "tagless-66b73.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640405482218:android:afac6f7cfd27fc508a8593",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv3Hmb9RPj5ZNGzkZURXdgQYizG77JV6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
