@@ -87,4 +87,60 @@
         android:layout_marginTop="15dp"
         android:src="@drawable/icon_favorite_full"/>
 
+    <TextView
+        android:id="@+id/tvNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nom"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"/>
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="16sp"
+        android:visibility="gone"
+        android:layout_below="@id/tvNom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonModifier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modifier infos"
+        android:backgroundTint="@color/bleunuit"
+        android:fontFamily="@font/montserratbold"
+        android:visibility="gone"
+        android:layout_below="@id/tvEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/buttonDeconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Déconnexion"
+        android:visibility="gone"
+        android:layout_below="@id/buttonModifier"
+        android:backgroundTint="@color/bleunuit"
+        android:fontFamily="@font/montserratbold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/buttonSupprimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer mon compte"
+        android:visibility="gone"
+        android:layout_below="@id/buttonDeconnexion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+
 </RelativeLayout>
