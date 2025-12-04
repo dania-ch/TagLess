@@ -97,6 +97,15 @@ class ParametreFragment : DialogFragment() {
             FavFragment().show(parentFragmentManager, "FavFragment")
         }
 
+        val btnParametre = view?.findViewById<ImageButton>(R.id.buttonParametre)
+
+        if (btnParametre != null) {
+            btnParametre.setOnClickListener {
+                dismiss()
+                ParametreFragment().show(parentFragmentManager, "ParametreFragment")
+            }
+        }
+
 
         return view
     }

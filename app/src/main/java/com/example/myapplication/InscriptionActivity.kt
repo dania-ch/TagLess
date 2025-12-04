@@ -4,8 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityInscriptionBinding
+import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -14,9 +17,32 @@ class InscriptionActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
+    private lateinit var binding: ActivityInscriptionBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inscription)
+        val btnProfil = findViewById<ImageButton>(R.id.buttonProfil)
+        val btnParametre = findViewById<ImageButton>(R.id.buttonParametre)
+        val btnFav = findViewById<ImageButton>(R.id.buttonFav)
+
+// 🟢 Ouvrir le fragment Profil
+        btnProfil.setOnClickListener {
+            ProfilFragment().show(supportFragmentManager, "ProfilFragment")
+        }
+
+// 🟢 Ouvrir le fragment Paramètres
+        btnParametre.setOnClickListener {
+            ParametreFragment().show(supportFragmentManager, "ParametreFragment")
+        }
+
+// 🟢 Ouvrir le fragment Favoris
+        btnFav.setOnClickListener {
+            FavFragment().show(supportFragmentManager, "FavFragment")
+        }
 
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()

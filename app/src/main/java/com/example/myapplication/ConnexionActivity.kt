@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,27 @@ class ConnexionActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.etPassword)
         val btnConnexion = findViewById<Button>(R.id.btnConnexion)
         val tvInscriptionLink = findViewById<TextView>(R.id.tvInscriptionLink)
+
+        val btnProfil = findViewById<ImageButton>(R.id.buttonProfil)
+        val btnParametre = findViewById<ImageButton>(R.id.buttonParametre)
+        val btnFav = findViewById<ImageButton>(R.id.buttonFav)
+
+// 🟢 Ouvrir le fragment Profil
+        btnProfil.setOnClickListener {
+            ProfilFragment().show(supportFragmentManager, "ProfilFragment")
+        }
+
+// 🟢 Ouvrir le fragment Paramètres
+        btnParametre.setOnClickListener {
+            ParametreFragment().show(supportFragmentManager, "ParametreFragment")
+        }
+
+// 🟢 Ouvrir le fragment Favoris
+        btnFav.setOnClickListener {
+            FavFragment().show(supportFragmentManager, "FavFragment")
+        }
+
+
 
         // Lien inscription
         tvInscriptionLink.setOnClickListener {

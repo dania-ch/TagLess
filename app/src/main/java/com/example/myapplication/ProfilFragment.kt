@@ -201,9 +201,14 @@ class ProfilFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        // Récupération des boutons
+
+
+        val view = inflater.inflate(R.layout.fragment_profil, container, false)
+
+//        Récupération des boutons
         val btnProfil = view?.findViewById<ImageButton>(R.id.buttonProfil)
         val btnParametre = view?.findViewById<ImageButton>(R.id.buttonParametre)
+        val btnFav = view?.findViewById<ImageButton>(R.id.buttonFav)
 
         // 🟢 Ouvrir le fragment Profil
         btnProfil?.setOnClickListener {
@@ -217,13 +222,11 @@ class ProfilFragment : DialogFragment() {
             ParametreFragment().show(parentFragmentManager, "ParametreFragment")
         }
 
-        val btnFav = view?.findViewById<ImageButton>(R.id.buttonFav)
+
         btnFav?.setOnClickListener {
             dismiss()
             FavFragment().show(parentFragmentManager, "FavFragment")
         }
-
-        val view = inflater.inflate(R.layout.fragment_profil, container, false)
 
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
