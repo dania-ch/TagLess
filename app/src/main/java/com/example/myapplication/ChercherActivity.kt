@@ -146,7 +146,7 @@ class ChercherActivity : AppCompatActivity() {
                 for (i in 0 until productsJson.length()) {
                     val item = productsJson.getJSONObject(i)
 
-                    // 🔎 Récupération du prix via Open Prices
+                    // Récupération du prix via Open Prices
                     var price = "N/A"
                     try {
                         val code = item.optString("code")

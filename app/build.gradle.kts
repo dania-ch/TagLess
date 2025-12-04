@@ -3,6 +3,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -71,40 +73,18 @@ dependencies {
 
     implementation(libs.barcode.scanning)
 
-    implementation ("com.github.bumptech.glide:glide:5.0.5")
+    implementation (libs.glide)
 
     implementation(libs.osmdroid.android)
 
-    implementation("org.maplibre.gl:android-sdk:12.1.3")
+    implementation(libs.android.sdk.v1221)
 // Version stable MapLibre SDK
 
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.firestore)
+
+
+    implementation(libs.guava)
 
 
 }
-//
-//dependencies {
-//    // Core Android
-//    implementation (libs.androidx.core.ktx.v1170)
-//    implementation (libs.androidx.appcompat)
-//    implementation (libs.material)
-//    implementation (libs.androidx.constraintlayout)
-//
-//    // CameraX
-//    implementation (libs.androidx.camera.core)
-//    implementation (libs.androidx.camera.camera2)
-//    implementation (libs.androidx.camera.lifecycle)
-//    implementation (libs.androidx.camera.view.v123)
-//
-//    // ML Kit Barcode
-//    implementation (libs.barcode.scanning)
-//
-//    // Kotlin Coroutines
-//    implementation (libs.kotlinx.coroutines.android)
-//
-//    // Glide
-//    implementation (libs.glide)
-//    annotationProcessor (libs.compiler)
-//
-//    // MapLibre (OpenStreetMap)
-//    implementation (libs.android.sdk)
-//}

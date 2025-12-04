@@ -52,13 +52,13 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 🔹 Remplir les champs
+        //  Remplir les champs
         binding.tvName.text = name
         binding.tvBrand.text = brand
         binding.tvStore.text = store
         binding.tvPrice.text = "$price €"
 
-        // 🔹 Image du produit
+        // Image du produit
         if (!image.isNullOrEmpty()) {
             Glide.with(requireContext())
                 .load(image)
@@ -66,7 +66,7 @@ class ProductFragment : Fragment() {
                 .into(binding.ivProduct)
         }
 
-        // 🔹 Bouton Scanner un autre produit
+        //  Bouton Scanner un autre produit
         binding.btnRescan.setOnClickListener {
             activity?.finish() // fermer le fragment/activity actuel
         }

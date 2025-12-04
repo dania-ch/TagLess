@@ -195,7 +195,7 @@ class ScanActivity : AppCompatActivity() {
     private fun fetchProductAndPrice(barcode: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                // 🔎 API 1 : Info produit (Open Food Facts)
+                //  API 1 : Info produit (Open Food Facts)
                 val productUrl = "https://world.openfoodfacts.org/api/v0/product/$barcode.json"
                 val productResponse = URL(productUrl).readText()
                 val productJson = JSONObject(productResponse)
@@ -211,7 +211,7 @@ class ScanActivity : AppCompatActivity() {
                     imageUrl = product.optString("image_front_small_url", "")
                 }
 
-                // 🔎 API 2 : Prix (Open Prices)
+                //  API 2 : Prix (Open Prices)
                 val priceUrl = "https://prices.openfoodfacts.org/api/v1/prices?product_code=$barcode"
                 val priceResponse = URL(priceUrl).readText()
                 val priceJson = JSONObject(priceResponse)
@@ -223,21 +223,21 @@ class ScanActivity : AppCompatActivity() {
                 if (items != null && items.length() > 0) {
                     val item = items.getJSONObject(0)
 
-                    // 1️⃣ Essayer plusieurs champs pour le nom du magasin
+                    // Essayer plusieurs champs pour le nom du magasin
                     val storeObj = item.optJSONObject("location")
                     storeName = storeObj?.optString("osm_name")
                         ?: item.optString("store")   // certains produits ont ce champ
                                 ?: item.optString("shop")    // fallback possible
                                 ?: "Magasin inconnu"
 
-                    // 2️⃣ Récupérer le prix
+                    // Récupérer le prix
                     val price = item.optDouble("price", -1.0)
                     if (price != -1.0) {
                         priceValue = "%.2f".format(price)
                     }
                 }
 
-                // ▶️ Ouvrir le Fragment Product avec les infos récupérées
+                //  Ouvrir le Fragment Product avec les infos récupérées
                 withContext(Dispatchers.Main) {
                     binding.progressBar.visibility = View.GONE
 
