@@ -8,15 +8,21 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityConnexionBinding
 import com.google.firebase.auth.FirebaseAuth
 
 class ConnexionActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var binding: ActivityConnexionBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityConnexionBinding.inflate(layoutInflater)
         setContentView(R.layout.activity_connexion)
+
+
 
         auth = FirebaseAuth.getInstance()
 
@@ -27,7 +33,7 @@ class ConnexionActivity : AppCompatActivity() {
 
         val btnProfil = findViewById<ImageButton>(R.id.buttonProfil)
         val btnParametre = findViewById<ImageButton>(R.id.buttonParametre)
-        val btnFav = findViewById<ImageButton>(R.id.buttonFav)
+
 
 // 🟢 Ouvrir le fragment Profil
         btnProfil.setOnClickListener {
@@ -40,8 +46,16 @@ class ConnexionActivity : AppCompatActivity() {
         }
 
 // 🟢 Ouvrir le fragment Favoris
-        btnFav.setOnClickListener {
-            FavFragment().show(supportFragmentManager, "FavFragment")
+        val buttonFav = findViewById<ImageButton>(R.id.buttonFav)
+        binding.buttonFav.setOnClickListener {
+            val shared = getSharedPreferences("user_session", MODE_PRIVATE)
+            val isLogged = shared.getBoolean("isLogged", false)
+
+            if (!isLogged) {
+                startActivity(Intent(this, ConnexionActivity::class.java))
+            } else {
+                FavFragment().show(supportFragmentManager, "FavFragment")
+            }
         }
 
 

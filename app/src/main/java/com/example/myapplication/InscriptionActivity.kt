@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.myapplication.databinding.ActivityChercherBinding
 import com.example.myapplication.databinding.ActivityInscriptionBinding
 import com.example.myapplication.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -17,6 +18,8 @@ class InscriptionActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
 
+
+
     private lateinit var binding: ActivityInscriptionBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +28,24 @@ class InscriptionActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inscription)
+        binding = ActivityInscriptionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        binding.buttonFav.setOnClickListener {
+            val shared = getSharedPreferences("user_session", MODE_PRIVATE)
+            val isLogged = shared.getBoolean("isLogged", false)
+
+            if (!isLogged) {
+                startActivity(Intent(this, ConnexionActivity::class.java))
+            } else {
+                FavFragment().show(supportFragmentManager, "FavFragment")
+            }
+        }
+
         val btnProfil = findViewById<ImageButton>(R.id.buttonProfil)
         val btnParametre = findViewById<ImageButton>(R.id.buttonParametre)
-        val btnFav = findViewById<ImageButton>(R.id.buttonFav)
+//        val btnFav = findViewById<ImageButton>(R.id.buttonFav)
 
 // 🟢 Ouvrir le fragment Profil
         btnProfil.setOnClickListener {
@@ -39,10 +57,32 @@ class InscriptionActivity : AppCompatActivity() {
             ParametreFragment().show(supportFragmentManager, "ParametreFragment")
         }
 
-// 🟢 Ouvrir le fragment Favoris
-        btnFav.setOnClickListener {
-            FavFragment().show(supportFragmentManager, "FavFragment")
+
+
+        class ChercherActivity : AppCompatActivity() {
+
+            private lateinit var binding: ActivityChercherBinding
+
+            override fun onCreate(savedInstanceState: Bundle?) {
+                super.onCreate(savedInstanceState)
+
+                binding = ActivityChercherBinding.inflate(layoutInflater)
+                setContentView(binding.root)
+
+                // Bouton Favoris
+                binding.btnFav.setOnClickListener {
+                    val shared = getSharedPreferences("user_session", MODE_PRIVATE)
+                    val isLogged = shared.getBoolean("isLogged", false)
+
+                    if (!isLogged) {
+                        startActivity(Intent(this, ConnexionActivity::class.java))
+                    } else {
+                        FavFragment().show(supportFragmentManager, "FavFragment")
+                    }
+                }
+            }
         }
+
 
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
