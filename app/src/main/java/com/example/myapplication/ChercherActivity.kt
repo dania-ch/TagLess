@@ -112,8 +112,19 @@ class ChercherActivity : AppCompatActivity() {
 
         // Config RecyclerView
         adapter = ProductAdapter(productList) { product ->
-            Toast.makeText(this, "Produit: ${product.name}", Toast.LENGTH_SHORT).show()
-            // Ici tu peux ouvrir ProductFragment avec les infos du produit
+            val fragment = ProductFragment.newInstance(
+                product.name,
+                product.brand,
+                product.store,
+                product.price,
+                product.image ?: ""
+            )
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainer, fragment)   // remplace l'activité par le fragment
+                .addToBackStack(null)                     // pour revenir en arrière
+                .commit()
+
         }
         binding.recyclerViewProducts.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewProducts.adapter = adapter
