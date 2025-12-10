@@ -7,7 +7,6 @@
     android:background="@drawable/bg"
     android:orientation="vertical">
 
-    <!-- Bouton Paramètre -->
     <ImageButton
         android:id="@+id/buttonParametre"
         android:layout_width="wrap_content"
@@ -18,7 +17,6 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/icon_parametre" />
 
-    <!-- Bouton Profil -->
     <ImageButton
         android:id="@+id/buttonProfil"
         android:layout_width="wrap_content"
@@ -29,7 +27,6 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/icon_account" />
 
-    <!-- Bouton Favoris (pas nécessaire mais peut rester pour l'affichage) -->
     <ImageButton
         android:id="@+id/buttonFav"
         android:layout_width="wrap_content"
@@ -40,7 +37,6 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/icon_favorite_full" />
 
-    <!-- Logo -->
     <ImageView
         android:id="@+id/logo"
         android:layout_width="80dp"
@@ -50,7 +46,6 @@
         android:layout_marginTop="20dp"
         android:src="@drawable/logo" />
 
-    <!-- Titre Mes listes -->
     <TextView
         android:id="@+id/meslistes"
         android:layout_width="wrap_content"
@@ -67,7 +62,6 @@
         android:shadowRadius="4"
         android:fontFamily="@font/montserratbold" />
 
-    <!-- Bouton ajouter une liste -->
     <ImageButton
         android:id="@+id/buttonadd"
         android:layout_width="wrap_content"
@@ -78,7 +72,6 @@
         android:background="?attr/selectableItemBackgroundBorderless"
         android:src="@drawable/icon_add" />
 
-    <!-- ListView pour afficher les listes -->
     <ListView
         android:id="@+id/lvFavLists"
         android:layout_width="match_parent"
@@ -88,90 +81,180 @@
         android:padding="10dp" />
 
 </RelativeLayout>
-
-
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<?xml version="1.0" encoding="utf-8"?>-->
 <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    android:background="@drawable/bg"-->
+<!--    android:layout_width="match_parent"-->
 <!--    android:layout_height="match_parent"-->
-<!--    >-->
+<!--    android:background="@drawable/bg"-->
+<!--    android:orientation="vertical">-->
 
-
+<!--    &lt;!&ndash; Bouton Paramètre &ndash;&gt;-->
 <!--    <ImageButton-->
 <!--        android:id="@+id/buttonParametre"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        tools:layout_editor_absoluteX="16dp"-->
-<!--        tools:layout_editor_absoluteY="16dp"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--        android:src="@drawable/icon_parametre"-->
-<!--        android:layout_marginRight="150dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_marginStart="16dp"-->
 <!--        android:layout_marginTop="15dp"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/icon_parametre" />-->
 
-<!--        />-->
-
+<!--    &lt;!&ndash; Bouton Profil &ndash;&gt;-->
 <!--    <ImageButton-->
 <!--        android:id="@+id/buttonProfil"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_marginTop="15dp"-->
 <!--        android:layout_alignParentEnd="true"-->
-<!--        tools:layout_editor_absoluteX="160dp"-->
-<!--        tools:layout_editor_absoluteY="493dp"-->
-<!--        android:layout_marginRight="75dp"-->
+<!--        android:layout_marginEnd="75dp"-->
+<!--        android:layout_marginTop="15dp"-->
 <!--        android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--        android:src="@drawable/icon_account"/>-->
+<!--        android:src="@drawable/icon_account" />-->
 
+<!--    &lt;!&ndash; Bouton Favoris (pas nécessaire mais peut rester pour l'affichage) &ndash;&gt;-->
 <!--    <ImageButton-->
 <!--        android:id="@+id/buttonFav"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        tools:layout_editor_absoluteX="160dp"-->
-<!--        tools:layout_editor_absoluteY="16dp"-->
-<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="16dp"-->
 <!--        android:layout_marginTop="15dp"-->
-<!--        android:src="@drawable/icon_favorite_full"/>-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/icon_favorite_full" />-->
 
+<!--    &lt;!&ndash; Logo &ndash;&gt;-->
 <!--    <ImageView-->
 <!--        android:id="@+id/logo"-->
 <!--        android:layout_width="80dp"-->
 <!--        android:layout_height="80dp"-->
-<!--        app:srcCompat="@drawable/logo"-->
-<!--        />-->
+<!--        android:layout_below="@id/buttonParametre"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:src="@drawable/logo" />-->
 
+<!--    &lt;!&ndash; Titre Mes listes &ndash;&gt;-->
 <!--    <TextView-->
 <!--        android:id="@+id/meslistes"-->
-<!--        android:fontFamily="@font/montserratbold"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="20dp"-->
+<!--        android:layout_below="@id/logo"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginStart="16dp"-->
+<!--        android:text="@string/meslistes"-->
+<!--        android:textSize="20sp"-->
+<!--        android:textStyle="bold"-->
 <!--        android:shadowColor="@color/turquoise"-->
 <!--        android:shadowDx="2"-->
 <!--        android:shadowDy="2"-->
 <!--        android:shadowRadius="4"-->
-<!--        android:text="@string/meslistes"-->
-<!--        android:layout_marginTop="130dp"-->
-<!--        android:layout_marginLeft="40dp"/>-->
+<!--        android:fontFamily="@font/montserratbold" />-->
 
+<!--    &lt;!&ndash; Bouton ajouter une liste &ndash;&gt;-->
 <!--    <ImageButton-->
 <!--        android:id="@+id/buttonadd"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
-<!--        tools:layout_editor_absoluteX="16dp"-->
-<!--        tools:layout_editor_absoluteY="16dp"-->
+<!--        android:layout_alignTop="@id/meslistes"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginEnd="16dp"-->
 <!--        android:background="?attr/selectableItemBackgroundBorderless"-->
-<!--        android:src="@drawable/icon_add"-->
-<!--        android:layout_marginLeft="350dp"-->
-<!--        android:layout_marginTop="130dp"-->
+<!--        android:src="@drawable/icon_add" />-->
 
-<!--        />-->
-
-
+<!--    &lt;!&ndash; ListView pour afficher les listes &ndash;&gt;-->
+<!--    <ListView-->
+<!--        android:id="@+id/lvFavLists"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_below="@id/meslistes"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:padding="10dp" />-->
 
 <!--</RelativeLayout>-->
+
+
+<!--    &lt;!&ndash;<?xml version="1.0" encoding="utf-8"?>&ndash;&gt;-->
+<!--&lt;!&ndash;<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;    xmlns:tools="http://schemas.android.com/tools"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;    xmlns:app="http://schemas.android.com/apk/res-auto"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:background="@drawable/bg"&ndash;&gt;-->
+<!--&lt;!&ndash;    android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;    >&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/buttonParametre"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteX="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteY="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:src="@drawable/icon_parametre"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginRight="150dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="15dp"&ndash;&gt;-->
+
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/buttonProfil"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_alignParentRight="true"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_alignParentEnd="true"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteX="160dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteY="493dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginRight="75dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:src="@drawable/icon_account"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/buttonFav"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_alignParentRight="true"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteX="160dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteY="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="15dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:src="@drawable/icon_favorite_full"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/logo"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="80dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        app:srcCompat="@drawable/logo"&ndash;&gt;-->
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/meslistes"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:fontFamily="@font/montserratbold"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:textSize="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:shadowColor="@color/turquoise"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:shadowDx="2"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:shadowDy="2"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:shadowRadius="4"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:text="@string/meslistes"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="130dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginLeft="40dp"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <ImageButton&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/buttonadd"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteX="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        tools:layout_editor_absoluteY="16dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="?attr/selectableItemBackgroundBorderless"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:src="@drawable/icon_add"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginLeft="350dp"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_marginTop="130dp"&ndash;&gt;-->
+
+<!--&lt;!&ndash;        />&ndash;&gt;-->
+
+
+
+<!--&lt;!&ndash;</RelativeLayout>&ndash;&gt;-->
