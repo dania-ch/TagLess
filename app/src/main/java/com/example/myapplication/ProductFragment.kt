@@ -1,117 +1,3 @@
-//package com.example.myapplication
-//
-//import android.content.Intent
-//import android.net.Uri
-//import android.os.Bundle
-//import android.view.LayoutInflater
-//import android.view.View
-//import android.view.ViewGroup
-//import androidx.core.view.isVisible
-//import androidx.fragment.app.Fragment
-//import com.bumptech.glide.Glide
-//import com.example.myapplication.databinding.FragmentProductBinding
-//
-//class ProductFragment : Fragment() {
-//
-//    private var _binding: FragmentProductBinding? = null
-//    private val binding get() = _binding!!
-//
-//    private var name: String = "Nom inconnu"
-//    private var brand: String = "Marque inconnue"
-//    private var store: String? = null
-//    private var price: String = "N/A"
-//    private var image: String? = null
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//
-//        arguments?.let {
-//            name = it.getString("name", name)
-//            brand = it.getString("brand", brand)
-//            store = it.getString("store")         // peut être null
-//            price = it.getString("price", price)
-//            image = it.getString("image")
-//        }
-//    }
-//
-//    override fun onCreateView(
-//        inflater: LayoutInflater,
-//        container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View {
-//        _binding = FragmentProductBinding.inflate(inflater, container, false)
-//        return binding.root
-//    }
-//
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        // Affichage
-//        binding.tvName.text = name
-//        binding.tvBrand.text = brand
-//
-//        // Si aucun magasin trouvé → afficher message clair
-//        if (store.isNullOrEmpty() || store == "Magasin inconnu") {
-//            binding.tvStore.text = "Magasin non fourni"
-//            binding.btnOpenMaps.isEnabled = false
-//            binding.btnOpenMaps.alpha = 0.4f
-//        } else {
-//            binding.tvStore.text = store
-//            binding.btnOpenMaps.isEnabled = true
-//            binding.btnOpenMaps.alpha = 1f
-//        }
-//
-//        binding.tvPrice.text = "${price}€"
-//
-//        // Image du produit
-//        if (!image.isNullOrEmpty()) {
-//            Glide.with(requireContext())
-//                .load(image)
-//                .centerInside()
-//                .into(binding.ivProduct)
-//        }
-//
-//        // Rescan bouton
-//        binding.btnRescan.setOnClickListener {
-//            activity?.finish()
-//        }
-//
-//        // Localisation uniquement si magasin valide
-//        binding.btnOpenMaps.setOnClickListener {
-//            if (!store.isNullOrEmpty()) {
-//                val uri = Uri.parse("geo:0,0?q=${Uri.encode(store!!)}")
-//                val intent = Intent(Intent.ACTION_VIEW, uri)
-//                intent.setPackage("com.google.android.apps.maps")
-//                startActivity(intent)
-//            }
-//        }
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
-//
-//    companion object {
-//        fun newInstance(
-//            name: String,
-//            brand: String,
-//            store: String?,
-//            price: String,
-//            image: String
-//        ) = ProductFragment().apply {
-//            arguments = Bundle().apply {
-//                putString("name", name)
-//                putString("brand", brand)
-//                putString("store", store)
-//                putString("price", price)
-//                putString("image", image)
-//            }
-//        }
-//    }
-//}
-
-
 package com.example.myapplication
 
 import android.app.AlertDialog
@@ -147,7 +33,7 @@ class ProductFragment : Fragment() {
     private var price: String = "N/A"
     private var image: String? = null
 
-    // For the dialog lists
+    //pour dialogue lists
     private val listNames = mutableListOf<String>()
     private val listIds = mutableListOf<String>()
 
@@ -179,11 +65,11 @@ class ProductFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // --- UI Initialization ---
+        // initialization ui
         binding.tvName.text = name
         binding.tvBrand.text = brand
 
-        // Si aucun magasin trouvé → afficher message clair
+        // Si aucun magasin trouvé afficher message clair
         if (store.isNullOrEmpty() || store == "Magasin inconnu") {
             binding.tvStore.text = "Magasin non fourni"
             binding.btnOpenMaps.isEnabled = false
@@ -203,7 +89,7 @@ class ProductFragment : Fragment() {
                 .into(binding.ivProduct)
         }
 
-        // --- Buttons Listeners ---
+        //btn listner
 
         binding.btnRescan.setOnClickListener {
             activity?.finish()
@@ -218,7 +104,7 @@ class ProductFragment : Fragment() {
             }
         }
 
-        // 🔹 FAB LISTENER: Add To Favorites
+        // ajt fav
         binding.fabAddFav.setOnClickListener {
             val user = auth.currentUser
             if (user != null) {
@@ -230,7 +116,7 @@ class ProductFragment : Fragment() {
         }
     }
 
-    // --- LOGIC: Fetch Lists ---
+    // fetch lists
     private fun loadListsAndShowDialog(userId: String) {
         db.collection("users")
             .document(userId)
@@ -256,7 +142,7 @@ class ProductFragment : Fragment() {
             }
     }
 
-    // --- LOGIC: Show Selection Dialog ---
+    // -show selection dialog
     private fun showSelectionDialog(userId: String) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Choisir une liste")
@@ -280,7 +166,7 @@ class ProductFragment : Fragment() {
         builder.show()
     }
 
-    // --- LOGIC: Create New List Dialog ---
+    // creer new list-
     private fun showCreateNewListDialog(userId: String) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Nouvelle liste")
@@ -293,13 +179,12 @@ class ProductFragment : Fragment() {
             val newListName = input.text.toString().trim()
             if (newListName.isNotEmpty()) {
 
-                // 1. Create the new list structure
                 val newListMap = hashMapOf(
                     "name" to newListName,
                     "products" to emptyList<Any>() // Initialize empty
                 )
 
-                // 2. Add to Firestore
+                // Ajt Firestore
                 db.collection("users")
                     .document(userId)
                     .collection("favLists")
@@ -319,7 +204,7 @@ class ProductFragment : Fragment() {
         builder.show()
     }
 
-    // --- LOGIC: Save Product to Firestore ---
+    // auvgarder product dans firebase
     private fun addProductToFirestoreList(userId: String, listId: String, listName: String) {
         // Create the product object map
         val productData = hashMapOf(
@@ -330,7 +215,7 @@ class ProductFragment : Fragment() {
             "image" to image
         )
 
-        // Use arrayUnion to append to the 'products' array field
+        // utilisation array union
         db.collection("users")
             .document(userId)
             .collection("favLists")

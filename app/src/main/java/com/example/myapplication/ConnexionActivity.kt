@@ -35,17 +35,17 @@ class ConnexionActivity : AppCompatActivity() {
         val btnParametre = findViewById<ImageButton>(R.id.buttonParametre)
 
 
-// 🟢 Ouvrir le fragment Profil
+// Ouvrir le fragment Profil
         btnProfil.setOnClickListener {
             ProfilFragment().show(supportFragmentManager, "ProfilFragment")
         }
 
-// 🟢 Ouvrir le fragment Paramètres
+//  Ouvrir le fragment Paramètres
         btnParametre.setOnClickListener {
             ParametreFragment().show(supportFragmentManager, "ParametreFragment")
         }
 
-// 🟢 Ouvrir le fragment Favoris
+//  Ouvrir le fragment Favoris
         val buttonFav = findViewById<ImageButton>(R.id.buttonFav)
         binding.buttonFav.setOnClickListener {
             val shared = getSharedPreferences("user_session", MODE_PRIVATE)
@@ -69,7 +69,7 @@ class ConnexionActivity : AppCompatActivity() {
             val emailInput = email.text.toString().trim()
             val passwordInput = password.text.toString().trim()
 
-            // Vérification des champs
+            // Verification des champs
             if (emailInput.isEmpty()) {
                 email.error = "L'email est obligatoire"
                 return@setOnClickListener
@@ -84,7 +84,7 @@ class ConnexionActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     Toast.makeText(this, "Connexion réussie", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
-                    finish() // Empêche le retour vers connexion
+                    finish() // Empeche le retour vers connexion
                 }
                 .addOnFailureListener {
                     Toast.makeText(this, "Email ou mot de passe incorrect", Toast.LENGTH_LONG).show()

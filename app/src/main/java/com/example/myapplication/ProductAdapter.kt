@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-// 1. Classe Product pour représenter les données
+// Classe Product pour représenter les données
 data class Product(
     val name: String,
     val brand: String,
@@ -17,13 +17,13 @@ data class Product(
     val image: String?
 )
 
-// 2. Adapter
+//  Adapter
 class ProductAdapter(
     private val products: List<Product>,
     private val onItemClick: (Product) -> Unit
 ) : RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
 
-    // 3. ViewHolder : chaque item du RecyclerView
+    //  ViewHolder chaque item du RecyclerView
     class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvName: TextView = itemView.findViewById(R.id.tvName)
         val tvBrand: TextView = itemView.findViewById(R.id.tvBrand)

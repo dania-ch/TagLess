@@ -46,7 +46,7 @@ class MapFragment : Fragment() {
         mapView?.controller?.setZoom(15.0)
         mapView?.controller?.setCenter(shopPoint)
 
-        // Marker magasin
+
         val marker = Marker(mapView)
         marker.position = shopPoint
         marker.title = "Magasin"

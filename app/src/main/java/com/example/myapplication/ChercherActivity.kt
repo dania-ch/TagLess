@@ -48,11 +48,11 @@ class ChercherActivity : AppCompatActivity() {
 
         // Config RecyclerView
         adapter = ProductAdapter(productList) { product ->
-            // 👉 Ouvrir ProductFragment au lieu d’un toast
+            // Ouvrir ProductFragment au lieu d’un toast
             val frag = ProductFragment.newInstance(
                 product.name,
                 product.brand,
-                product.store,     // 👈 magasin correct (lié au moins cher)
+                product.store,
                 product.price,
                 product.image ?: ""
             )
@@ -78,16 +78,18 @@ class ChercherActivity : AppCompatActivity() {
         })
     }
 
+
+//    Fetch pour recuperer les donnes de l'api
     private fun fetchProducts(query: String) {
         CoroutineScope(Dispatchers.IO).launch {
             try {
-                // 1. SEARCH PRODUCTS (Global Database - No location filter available here)
+                // Chercher produit (Global)
                 val searchUrl = "https://world.openfoodfacts.org/cgi/search.pl?search_terms=$query&search_simple=1&action=process&json=1&page_size=15"
                 val searchResponse = URL(searchUrl).readText()
                 val searchJson = JSONObject(searchResponse)
                 val productsJson = searchJson.optJSONArray("products") ?: org.json.JSONArray()
 
-                // 2. PARALLEL PRICE FETCHING (Apply Location & Currency Here)
+                // Prix
                 val tasks = (0 until productsJson.length()).map { i ->
                     async {
                         val item = productsJson.getJSONObject(i)

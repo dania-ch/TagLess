@@ -56,21 +56,21 @@ class FavFragment : DialogFragment() {
             return view
         }
 
-        // 🔹 Charger les listes existantes
+        //  Charger les listes existantes
         loadFavLists(currentUser.uid)
 
-        // 🔹 Créer une nouvelle liste
+        //  Crwer une nouvelle liste
         btnAddList.setOnClickListener {
             showCreateListDialog(currentUser.uid)
         }
 
-        // 🔹 CLICK LISTENER: Show Products inside the list
+        // Afficher les produits dans la liste
         lvLists.setOnItemClickListener { _, _, position, _ ->
             val selectedList = favLists[position]
             showListDetailsDialog(selectedList)
         }
 
-        // 🔹 Boutons Profil et Paramètre
+        //  Boutons Profil et Parametre
         val btnProfil = view.findViewById<ImageButton>(R.id.buttonProfil)
         val btnParametre = view.findViewById<ImageButton>(R.id.buttonParametre)
 
@@ -87,7 +87,7 @@ class FavFragment : DialogFragment() {
         return view
     }
 
-    // --- 1. Load Lists from Firestore ---
+    // Charger lists de firestore
     private fun loadFavLists(userId: String) {
         db.collection("users")
             .document(userId)
@@ -99,7 +99,7 @@ class FavFragment : DialogFragment() {
                 for (doc in snapshot.documents) {
                     val name = doc.getString("name") ?: "Liste sans nom"
 
-                    // Safely cast the products array
+                    // cast produit
                     val products = doc.get("products") as? List<Map<String, Any>> ?: emptyList()
 
                     favLists.add(FavList(doc.id, name, products))
@@ -112,7 +112,7 @@ class FavFragment : DialogFragment() {
             }
     }
 
-    // --- 2. Create New List Dialog ---
+    // Cree nvl lists dialogue
     private fun showCreateListDialog(userId: String) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Créer une nouvelle liste")
@@ -147,7 +147,7 @@ class FavFragment : DialogFragment() {
         builder.show()
     }
 
-    // --- 3. SHOW PRODUCTS DIALOG & HANDLE CLICKS ---
+    // Affiche product dialogue
     private fun showListDetailsDialog(favList: FavList) {
         val builder = AlertDialog.Builder(requireContext())
 
@@ -164,13 +164,13 @@ class FavFragment : DialogFragment() {
         if (favList.products.isEmpty()) {
             builder.setMessage("\n   Aucun produit dans cette liste.")
         } else {
-            // 1. Create the Custom Adapter
+            //creer adapteur
             val customAdapter = FavProductAdapter(requireContext(), favList.products)
 
-            // 2. Set the Adapter to the Dialog
+            // set adapteur
             builder.setAdapter(customAdapter) { dialog, which ->
 
-                // Get the data safely
+                // recuperation donnee
                 val selectedProductMap = favList.products[which]
                 val name = selectedProductMap["name"] as? String ?: "Inconnu"
                 val brand = selectedProductMap["brand"] as? String ?: "Marque inconnue"
@@ -178,7 +178,7 @@ class FavFragment : DialogFragment() {
                 val price = selectedProductMap["price"] as? String ?: "N/A"
                 val image = selectedProductMap["image"] as? String ?: ""
 
-                // 3. Open Product Fragment
+                //ouvrir product fragment
                 val fragment = ProductFragment.newInstance(name, brand, store, price, image)
 
                 requireActivity().supportFragmentManager.beginTransaction()
@@ -193,15 +193,15 @@ class FavFragment : DialogFragment() {
 
         builder.setPositiveButton("Fermer") { dialog, _ -> dialog.dismiss() }
 
-        // Show the dialog
+//        affiche dialog
         val dialog = builder.create()
 
-        // Optional: Transparent background to let the CardViews rounded corners shine
+        // tranparent background
         dialog.window?.setBackgroundDrawableResource(android.R.drawable.screen_background_light_transparent)
 
         dialog.show()
 
-        // Optional: Styling the list dividers to be invisible (cleaner look)
+        // lits devider invisible
         val listView = dialog.listView
         listView.divider = null
         listView.dividerHeight = 0
@@ -253,7 +253,7 @@ class FavProductAdapter(
         val brand = item["brand"] as? String ?: ""
 
         // Set text
-        // Combining Brand + Name makes it look professional, but keeps 1 line limit
+
         tvName.text = if(brand.isNotEmpty()) "$brand - $name" else name
         tvPrice.text = if(price.isNotEmpty() && price != "N/A") "$price€" else ""
 

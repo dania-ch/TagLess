@@ -37,7 +37,7 @@ class ParametreFragment : DialogFragment() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerLangue.adapter = adapter
 
-        // Charger la langue déjà enregistrée
+        // Charger la langue déjà enregistree
         val savedLang = sharedPreferences.getString("app_lang", "fr")
         spinnerLangue.setSelection(if (savedLang == "en") 1 else 0)
 
@@ -130,7 +130,7 @@ class ParametreFragment : DialogFragment() {
 
 
 
-        // Redémarrer proprement l'activité
+        // Redemarrer proprement l'activité
         val intent = requireActivity().intent
         requireActivity().finish()
         startActivity(intent)
