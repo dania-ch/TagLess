@@ -70,7 +70,7 @@
         android:layout_below="@id/logo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="Chercher votre aliment"
+        android:text="Cherchez votre aliment"
         android:textSize="20sp"
         android:textStyle="bold"
         android:shadowColor="@color/turquoise"
